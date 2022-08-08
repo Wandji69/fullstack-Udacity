@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -25,7 +25,10 @@ def index():
 @app.route('/todo/create')
 def create():
     description = request.form.get('description')
-
+    todo = Todo(description=description)
+    db.session.add(todo)
+    db.session.commit()
+    return redirect(url_for('index'))
 
 # always include this at the bottom of your code (port 3000 is only necessary in workspaces)
 if __name__ == '__main__':
