@@ -1,4 +1,4 @@
-#!/Users/collins/Documents/Code/Full_Stack/demo/bin/python
+#!/Users/collins/Documents/Code/Full_Stack/demo/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys
