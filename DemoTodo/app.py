@@ -23,8 +23,8 @@ def __repr__(self):
 
 @app.route('/todos/create', methods=['POST'])
 def create_todo():
-    body={}
-    error=False
+    body = {}
+    error = False
     try:
         description = request.get_json()['description']
         todo = Todo(description=description)
