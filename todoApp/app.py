@@ -107,7 +107,7 @@ Route for Deleting todos
 def delete_todo(todo_id):
     error = False
     try:
-        # Todo.query.filter_by(id=todo_id).delete()
+        Todo.query.filter_by(id=todo_id).delete()
         todo = Todo.query.filter_by(id=todo_id)
         db.session.delete(todo)
         db.session.commit()
